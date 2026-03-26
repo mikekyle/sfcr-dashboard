@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rothesay Life — SFCR Scanner</title>
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3e;
+    --text: #e2e8f0; --muted: #8892a4; --accent: #6366f1;
+    --green: #22c55e; --amber: #f59e0b; --red: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; padding: 2rem; max-width: 1100px; }
+  h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.1rem; font-weight: 600; margin: 2rem 0 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+  .back { color: var(--accent); text-decoration: none; font-size: 0.85rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+  .card-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.4rem; }
+  .card-value { font-size: 1.6rem; font-weight: 700; }
+  .card-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+  .green { color: var(--green); } .amber { color: var(--amber); } .red { color: var(--red); }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; }
+  th { background: var(--border); color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.65rem 1rem; text-align: left; }
+  td { padding: 0.65rem 1rem; border-top: 1px solid var(--border); font-size: 0.85rem; }
+  .badge { display: inline-block; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.7rem; font-weight: 600; }
+  .badge-high { background: rgba(34,197,94,0.15); color: var(--green); }
+  .badge-medium { background: rgba(245,158,11,0.15); color: var(--amber); }
+  .badge-low { background: rgba(239,68,68,0.15); color: var(--red); }
+  .badge-not_found { background: rgba(136,146,164,0.1); color: var(--muted); }
+  .section-bars { display: flex; flex-direction: column; gap: 0.4rem; }
+  .bar-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; }
+  .bar-label { width: 120px; color: var(--muted); flex-shrink: 0; }
+  .bar-track { flex: 1; background: var(--border); border-radius: 3px; height: 8px; }
+  .bar-fill { background: var(--accent); border-radius: 3px; height: 8px; }
+  .bar-val { width: 60px; text-align: right; color: var(--muted); }
+  .footer { color: var(--muted); font-size: 0.75rem; margin-top: 2rem; }
+  .tag { display: inline-block; background: rgba(99,102,241,0.1); color: var(--accent); border-radius: 3px; padding: 0.1rem 0.4rem; font-size: 0.7rem; margin-right: 0.25rem; }
+  .risks { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .risk-tag { background: rgba(239,68,68,0.08); color: #fca5a5; border-radius: 4px; padding: 0.2rem 0.5rem; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← Back to tracker</a>
+<h1 style="margin-top: 1rem;">Rothesay Life</h1>
+<p class="subtitle">Generated 2026-03-26 22:35 UTC</p>
+
+
+  
+
+  <h2>Latest Report (2024 SFCR)</h2>
+
+  <div class="grid">
+    
+    <div class="card">
+      <div class="card-label">SCR Ratio</div>
+      <div class="card-value green">
+        264%
+      </div>
+      <div class="card-sub">Solvency Capital Requirement</div>
+    </div>
+    
+    
+    <div class="card">
+      <div class="card-label">MCR Ratio</div>
+      <div class="card-value">568%</div>
+      <div class="card-sub">Minimum Capital Requirement</div>
+    </div>
+    
+    
+    <div class="card">
+      <div class="card-label">Own Funds</div>
+      <div class="card-value">£9,201m</div>
+      <div class="card-sub">
+        Tier 1: 76%
+      </div>
+    </div>
+    
+    
+    <div class="card">
+      <div class="card-label">Gross Written Premium</div>
+      <div class="card-value">£16,318m</div>
+    </div>
+    
+    
+    <div class="card">
+      <div class="card-label">Technical Provisions</div>
+      <div class="card-value">£61,184m</div>
+    </div>
+    
+    
+    <div class="card">
+      <div class="card-label">IFRS 17 Op. Profit</div>
+      <div class="card-value">£1,779m</div>
+    </div>
+    
+  </div>
+
+  
+  <h2>Key Risks Identified</h2>
+  <div class="risks" style="margin-bottom: 1.5rem;">
+    
+    <span class="risk-tag">Market risk</span>
+    
+    <span class="risk-tag">Insurance risk (longevity)</span>
+    
+    <span class="risk-tag">Counterparty risk</span>
+    
+    <span class="risk-tag">Operational risk</span>
+    
+    <span class="risk-tag">Liquidity risk</span>
+    
+    <span class="risk-tag">Cyber risk</span>
+    
+    <span class="risk-tag">Climate change risk</span>
+    
+  </div>
+  
+
+  
+  <h2>Section Analysis (Word Count)</h2>
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <div class="section-bars">
+      
+      
+      <div class="bar-row">
+        <span class="bar-label">summary</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 4%"></div>
+        </div>
+        <span class="bar-val">909</span>
+      </div>
+      
+      <div class="bar-row">
+        <span class="bar-label">A_business</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 23%"></div>
+        </div>
+        <span class="bar-val">4,347</span>
+      </div>
+      
+      <div class="bar-row">
+        <span class="bar-label">B_governance</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 36%"></div>
+        </div>
+        <span class="bar-val">6,751</span>
+      </div>
+      
+      <div class="bar-row">
+        <span class="bar-label">C_risk_profile</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 37%"></div>
+        </div>
+        <span class="bar-val">6,967</span>
+      </div>
+      
+      <div class="bar-row">
+        <span class="bar-label">D_valuation</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 40%"></div>
+        </div>
+        <span class="bar-val">7,435</span>
+      </div>
+      
+      <div class="bar-row">
+        <span class="bar-label">E_capital</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width: 100%"></div>
+        </div>
+        <span class="bar-val">18,362</span>
+      </div>
+      
+    </div>
+  </div>
+  
+
+  
+  <h2>Material Changes Noted</h2>
+  <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text);">
+    
+    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Implementation of Solvency UK Reforms via Policy Statement 15/24 and PS10/24 (MA attestation)</li>
+    
+    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Issuance of c.£750m Tier 2 debt (USD and GBP) and repayment of £400m Tier 2 borrowings</li>
+    
+    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">First investment into French home loans via FCT Morisot and Lambay Capital DAC</li>
+    
+  </ul>
+  
+
+  
+  <h2>Executive Summary Themes</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+    
+    <span class="tag">UK&#39;s largest specialist pensions insurer focus</span>
+    
+    <span class="tag">Bulk Purchase Annuity (BPA) market leadership</span>
+    
+    <span class="tag">Strong 2024 financial performance (£15.7bn new business)</span>
+    
+    <span class="tag">Robust solvency and capital management strategy</span>
+    
+    <span class="tag">Sophisticated risk management and investment approach</span>
+    
+  </div>
+  
+
+  <h2>Confidence Scores</h2>
+  <table>
+    <thead><tr><th>Field</th><th>Confidence</th><th>Source Quote</th></tr></thead>
+    <tbody>
+      
+      
+      <tr>
+        <td>scr_ratio</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>mcr_ratio</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>own_funds_total_gbpm</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>own_funds_tier1_pct</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>scr_gbpm</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>mcr_gbpm</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>technical_provisions_gbpm</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>gwp_gbpm</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>ifrs17_operating_profit_gbpm</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      
+      
+      <tr>
+        <td>total_assets_gbpm</td>
+        <td><span class="badge badge-high">high</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>matching_adjustment_used</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>volatility_adjustment_used</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>transitional_measures_used</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>climate_risk_discussed</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>emerging_risks_discussed</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>key_risks_mentioned</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>material_changes_noted</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+      
+      <tr>
+        <td>executive_summary_themes</td>
+        <td><span class="badge badge-medium">medium</span></td>
+        <td style="color: var(--muted); font-size: 0.75rem; max-width: 400px; overflow: hidden; text-overflow: ellipsis;">
+          
+        </td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+
+
+
+
+
+<p class="footer">Data extracted by SFCR Scanner. Always verify figures against the original documents. <a href="https://www.rothesay.com/media/0pggaao3/rothesay-sfcr-2024.pdf" style="color: var(--accent);">Source PDF ↗</a></p>
+</body>
+</html>
