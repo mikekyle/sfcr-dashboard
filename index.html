@@ -1,1 +1,77 @@
-<html><body><p>SFCR Dashboard — coming soon.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SFCR Scanner — UK Life Insurer Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3e;
+    --text: #e2e8f0; --muted: #8892a4; --accent: #6366f1;
+    --green: #22c55e; --amber: #f59e0b; --red: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; padding: 2rem; }
+  h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 8px; overflow: hidden; }
+  th { background: var(--border); color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.75rem 1rem; text-align: left; }
+  td { padding: 0.75rem 1rem; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  tr:hover td { background: rgba(99,102,241,0.05); }
+  .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+  .badge-green { background: rgba(34,197,94,0.15); color: var(--green); }
+  .badge-amber { background: rgba(245,158,11,0.15); color: var(--amber); }
+  .badge-red { background: rgba(239,68,68,0.15); color: var(--red); }
+  .badge-muted { background: rgba(136,146,164,0.15); color: var(--muted); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .footer { color: var(--muted); font-size: 0.75rem; margin-top: 2rem; }
+  .scr-value { font-weight: 700; }
+  .scr-high { color: var(--green); }
+  .scr-mid { color: var(--amber); }
+  .scr-low { color: var(--red); }
+</style>
+</head>
+<body>
+<h1>SFCR Scanner</h1>
+<p class="subtitle">UK Life Insurer Regulatory Disclosure Tracker &mdash; Generated 2026-03-26 22:35 UTC</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Insurer</th>
+      <th>Latest Year</th>
+      <th>SCR Ratio</th>
+      <th>Own Funds (£m)</th>
+      <th>Status</th>
+      <th>Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        <td><strong>Rothesay Life</strong></td>
+        <td>2024</td>
+        <td>
+          
+            
+            <span class="scr-value scr-high">264%</span>
+          
+        </td>
+        <td>
+          
+            £9,201m
+          
+        </td>
+        <td><span class="badge badge-green">Processed</span></td>
+        <td><a href="rothesay.html">View →</a></td>
+      </tr>
+      
+    
+  </tbody>
+</table>
+
+<p class="footer">Data extracted by SFCR Scanner. Sources: sfcrdatabase.com, company IR pages, Solvency II Wire. Always verify figures against original documents.</p>
+</body>
+</html>
