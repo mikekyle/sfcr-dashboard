@@ -6,8 +6,8 @@
 <title>Rothesay Life — SFCR Scanner</title>
 <style>
   :root {
-    --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3e;
-    --text: #e2e8f0; --muted: #8892a4; --accent: #6366f1;
+    --bg: #0b1a20; --surface: #122530; --border: #1e3d4a;
+    --text: #d4eaf0; --muted: #7aa8b8; --accent: #06b6d4;
     --green: #22c55e; --amber: #f59e0b; --red: #ef4444;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,7 +52,7 @@
     opacity: 0;
     transition: opacity 0.2s ease;
     position: absolute;
-    bottom: 110%;
+    bottom: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
     width: 380px;
@@ -62,7 +62,15 @@
     padding: 16px;
     z-index: 100;
     box-shadow: 0 12px 32px rgba(0,0,0,0.6);
-    pointer-events: none;
+  }
+  /* Invisible bridge between card and tooltip so hover isn't broken by the gap */
+  .tooltip-box::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 14px;
   }
   .tooltip-box::after {
     content: "";
@@ -73,9 +81,21 @@
     border: 7px solid transparent;
     border-top-color: #3a3f5c;
   }
-  .metric-wrapper:hover .tooltip-box {
+  .metric-wrapper:hover .tooltip-box,
+  .tooltip-box:hover {
     visibility: visible;
     opacity: 1;
+  }
+  /* Caret when tooltip is flipped below the card */
+  .tooltip-box.flipped::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: #3a3f5c;
+  }
+  .tooltip-box.flipped::before {
+    top: auto;
+    bottom: 100%;
   }
 
   /* ── Tooltip internals ── */
@@ -177,7 +197,7 @@
 <body>
 <a class="back" href="index.html">&larr; Back to tracker</a>
 <h1 style="margin-top: 1rem;">Rothesay Life</h1>
-<p class="subtitle">Generated 2026-03-26 23:53 UTC</p>
+<p class="subtitle">Generated 2026-03-27 23:25 UTC</p>
 
 
   
@@ -208,7 +228,7 @@
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big high">95%</span>
+            <span class="tt-score-big high">91%</span>
             <div>
               <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
@@ -217,24 +237,24 @@
 
           
           <div class="tt-agreement">
-            Strong agreement
+            Moderate agreement
             
-            between models (variance 4.6)
+            between models (variance 10.5)
           </div>
           
 
           
           
             <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"SCR coverage (%) ... 264%"</div>
+            <div class="tt-quote">"SCR coverage (%) 261% 273% 264% 276%"</div>
             
-            <div class="tt-location">Section E.2.4 - Solvency coverage ratios, Table: RL RLP 2024 2023</div>
+            <div class="tt-location">Section E.2.4 - Solvency coverage ratios</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states the exact value &#39;264%&#39; for &#39;SCR coverage (%)&#39; which directly corresponds to the extracted SCR Ratio value of 264.0.</div>
+            <div class="tt-reasoning">The quote explicitly states &#34;SCR coverage (%) 264%&#34; which directly and unambiguously matches the extracted SCR Ratio value of 264.0, with no conversion or interpretation required.</div>
           
 
           
@@ -243,27 +263,27 @@
             
             <div class="tt-model-row">
               <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-score" style="color: var(--amber)">75%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">claude-haiku-4.5</span>
-              <span class="tt-model-score" style="color: var(--green)">92%</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-score" style="color: var(--green)">98%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">deepseek-chat</span>
-              <span class="tt-model-score" style="color: var(--green)">90%</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">deepseek-v3.2</span>
-              <span class="tt-model-score" style="color: var(--green)">95%</span>
+              <span class="tt-model-score" style="color: var(--green)">85%</span>
             </div>
             
           </details>
@@ -293,7 +313,7 @@
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big high">97%</span>
+            <span class="tt-score-big high">98%</span>
             <div>
               <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
@@ -304,22 +324,22 @@
           <div class="tt-agreement">
             Strong agreement
             
-            between models (variance 3.7)
+            between models (variance 3.5)
           </div>
           
 
           
           
             <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"MCR coverage (%) ... 568%"</div>
+            <div class="tt-quote">"MCR coverage (%) 560% 655% 568% 663%"</div>
             
-            <div class="tt-location">Section E.2.4 - Solvency coverage ratios, Table: RL RLP 2024 2023</div>
+            <div class="tt-location">Section E.2.4 - Solvency coverage ratios</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states &#39;568%&#39; for &#39;MCR coverage (%)&#39; which directly corresponds to the extracted value of 568.0 for the MCR Ratio field.</div>
+            <div class="tt-reasoning">The quote explicitly lists &#39;568%&#39; under &#39;MCR coverage (%)&#39;, which matches the extracted value of 568.0 when interpreted as a percentage-based ratio.</div>
           
 
           
@@ -328,7 +348,7 @@
             
             <div class="tt-model-row">
               <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-score" style="color: var(--green)">98%</span>
             </div>
             
             <div class="tt-model-row">
@@ -348,7 +368,7 @@
             
             <div class="tt-model-row">
               <span class="tt-model-name">deepseek-v3.2</span>
-              <span class="tt-model-score" style="color: var(--green)">95%</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
             </div>
             
           </details>
@@ -372,14 +392,14 @@
             <span class="conf-dot high" title="high"></span>
           
         </div>
-        <div class="card-value ">&amp;pound;9,201m</div>
+        <div class="card-value ">£9,201m</div>
         <div class="card-sub">Tier 1: 76%</div>
 
         
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big high">98%</span>
+            <span class="tt-score-big high">96%</span>
             <div>
               <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
@@ -390,22 +410,22 @@
           <div class="tt-agreement">
             Strong agreement
             
-            between models (variance 2.7)
+            between models (variance 3.5)
           </div>
           
 
           
           
             <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"Total basic Own Funds 9,201"</div>
+            <div class="tt-quote">"Own Funds available to meet the SCR (£m) 9,201 8,868"</div>
             
-            <div class="tt-location">Section E.1.2 - Analysis of Own Funds, Table: The structure and quality of RLP’s Own Funds by Tier is as follows:</div>
+            <div class="tt-location">Section E.1.2 - Analysis of Own Funds (RLP table)</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states the exact value (9,201) for the requested metric (Total Own Funds) within the correct context of the table.</div>
+            <div class="tt-reasoning">The quote explicitly states the exact value of 9,201 for the &#39;Own Funds&#39; metric, matching the extracted value and context.</div>
           
 
           
@@ -419,7 +439,92 @@
             
             <div class="tt-model-row">
               <span class="tt-model-name">claude-haiku-4.5</span>
+              <span class="tt-model-score" style="color: var(--green)">92%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">llama-3.3-70b-instruct</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">deepseek-chat</span>
               <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">deepseek-v3.2</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+          </details>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    
+    
+      
+    
+    
+    <div class="card">
+      <div class="metric-wrapper">
+        <div class="card-label">
+          T1 Restricted
+          
+            <span class="conf-dot high" title="high"></span>
+          
+        </div>
+        <div class="card-value ">£984m</div>
+        <div class="card-sub">Restricted Tier 1 own funds</div>
+
+        
+        
+        <div class="tooltip-box">
+          <div class="tt-score-row">
+            <span class="tt-score-big high">97%</span>
+            <div>
+              <span class="tt-level-pill high">high</span><br>
+              <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
+            </div>
+          </div>
+
+          
+          <div class="tt-agreement">
+            Strong agreement
+            
+            between models (variance 3.7)
+          </div>
+          
+
+          
+          
+            <div class="tt-section-label">Source Quote</div>
+            <div class="tt-quote">"Tier 1 capital restricted (£m) 984 984"</div>
+            
+            <div class="tt-location">Section E.1.2 - Analysis of Own Funds (RLP table)</div>
+            
+          
+
+          
+            <div class="tt-section-label">Evaluator Reasoning</div>
+            <div class="tt-reasoning">The quote explicitly states &#39;Tier 1 capital restricted (£m) 984 984&#39; which directly provides the exact value for Tier 1 Restricted Own Funds in millions.</div>
+          
+
+          
+          <details class="tt-models">
+            <summary>Model breakdown (5)</summary>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">gemini-3-flash-preview</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">claude-haiku-4.5</span>
+              <span class="tt-model-score" style="color: var(--green)">92%</span>
             </div>
             
             <div class="tt-model-row">
@@ -454,43 +559,43 @@
         <div class="card-label">
           Gross Written Premium
           
-            <span class="conf-dot medium" title="medium"></span>
+            <span class="conf-dot high" title="high"></span>
           
         </div>
-        <div class="card-value ">&amp;pound;15,700m</div>
+        <div class="card-value ">£15,700m</div>
         
 
         
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big medium">75%</span>
+            <span class="tt-score-big high">91%</span>
             <div>
-              <span class="tt-level-pill medium">medium</span><br>
+              <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
             </div>
           </div>
 
           
           <div class="tt-agreement">
-            Notable disagreement
+            Strong agreement
             
-            between models (variance 29.7)
+            between models (variance 4.2)
           </div>
           
 
           
           
             <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"New business: During the year, Rothesay wrote new business of £15.7bn (2023: £12.7bn)."</div>
+            <div class="tt-quote">"During the year, Rothesay wrote new business of £15.7bn (2023: £12.7bn)."</div>
             
-            <div class="tt-location">Executive Summary, Section A. Business and performance</div>
+            <div class="tt-location">Executive Summary, Section A.2 - Underwriting performance</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote mentions £15.7bn, which matches the extracted value of 15700.0 when converted to millions, but the context refers to &#39;new business&#39; rather than explicitly stating &#39;Gross Written Premium&#39;.</div>
+            <div class="tt-reasoning">The quote explicitly states &#34;Rothesay wrote new business of £15.7bn,&#34; which directly supports the extracted Gross Written Premium value of 15700.0 (correctly converted from £15.7 billion), though &#34;new business written&#34; could theoretically be narrower than total &#34;Gross Written Premium&#34; depending on accounting definitions.</div>
           
 
           
@@ -499,27 +604,27 @@
             
             <div class="tt-model-row">
               <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--red)">25%</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">claude-haiku-4.5</span>
-              <span class="tt-model-score" style="color: var(--amber)">78%</span>
+              <span class="tt-model-score" style="color: var(--green)">92%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-score" style="color: var(--green)">90%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">deepseek-chat</span>
-              <span class="tt-model-score" style="color: var(--amber)">75%</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">deepseek-v3.2</span>
-              <span class="tt-model-score" style="color: var(--green)">95%</span>
+              <span class="tt-model-score" style="color: var(--green)">85%</span>
             </div>
             
           </details>
@@ -542,92 +647,7 @@
             <span class="conf-dot high" title="high"></span>
           
         </div>
-        <div class="card-value ">&amp;pound;61,184m</div>
-        
-
-        
-        
-        <div class="tooltip-box">
-          <div class="tt-score-row">
-            <span class="tt-score-big high">94%</span>
-            <div>
-              <span class="tt-level-pill high">high</span><br>
-              <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
-            </div>
-          </div>
-
-          
-          <div class="tt-agreement">
-            Strong agreement
-            
-            between models (variance 5.2)
-          </div>
-          
-
-          
-          
-            <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"Net technical provisions 61,184 52,282"</div>
-            
-            <div class="tt-location">Section D.2 - Technical provisions, Table: The table below shows the technical provisions of Rothesay.</div>
-            
-          
-
-          
-            <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states &#34;Net technical provisions 61,184&#34; which directly matches the extracted value with no ambiguity or interpretation required, though the value appears to be in thousands based on formatting convention.</div>
-          
-
-          
-          <details class="tt-models">
-            <summary>Model breakdown (5)</summary>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">claude-haiku-4.5</span>
-              <span class="tt-model-score" style="color: var(--green)">92%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-chat</span>
-              <span class="tt-model-score" style="color: var(--green)">90%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-v3.2</span>
-              <span class="tt-model-score" style="color: var(--green)">90%</span>
-            </div>
-            
-          </details>
-          
-        </div>
-        
-      </div>
-    </div>
-  
-    
-    
-      
-    
-    
-    <div class="card">
-      <div class="metric-wrapper">
-        <div class="card-label">
-          SCR Amount
-          
-            <span class="conf-dot high" title="high"></span>
-          
-        </div>
-        <div class="card-value ">&amp;pound;3,262m</div>
+        <div class="card-value ">£61,184m</div>
         
 
         
@@ -652,15 +672,15 @@
           
           
             <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"SCR (£m) ... 3,262"</div>
+            <div class="tt-quote">"Net technical provisions 61,184 52,282"</div>
             
-            <div class="tt-location">Section E.2.4 - Solvency coverage ratios, Table: RL RLP 2024 2023</div>
+            <div class="tt-location">Section D.2 - Technical provisions</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states &#34;SCR (£m) ... 3,262&#34; which directly matches the extracted value of 3262.0, with the unit clarification showing the figure is in millions of pounds, making this a precise and unambiguous match for the SCR Amount metric.</div>
+            <div class="tt-reasoning">The quote explicitly states &#34;Net technical provisions 61,184&#34; which directly matches the extracted value with no interpretation needed, though the presence of comparison figures (52,282) creates minimal ambiguity.</div>
           
 
           
@@ -701,6 +721,91 @@
   
     
     
+      
+    
+    
+    <div class="card">
+      <div class="metric-wrapper">
+        <div class="card-label">
+          SCR Amount
+          
+            <span class="conf-dot high" title="high"></span>
+          
+        </div>
+        <div class="card-value ">£3,262m</div>
+        
+
+        
+        
+        <div class="tooltip-box">
+          <div class="tt-score-row">
+            <span class="tt-score-big high">98%</span>
+            <div>
+              <span class="tt-level-pill high">high</span><br>
+              <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
+            </div>
+          </div>
+
+          
+          <div class="tt-agreement">
+            Strong agreement
+            
+            between models (variance 2.7)
+          </div>
+          
+
+          
+          
+            <div class="tt-section-label">Source Quote</div>
+            <div class="tt-quote">"SCR (£m) 3,262 3,101"</div>
+            
+            <div class="tt-location">Section E.2.4 - Solvency coverage ratios</div>
+            
+          
+
+          
+            <div class="tt-section-label">Evaluator Reasoning</div>
+            <div class="tt-reasoning">The quote explicitly matches the extracted value and contextually links it to the &#39;SCR&#39; metric with the correct scaling (millions).</div>
+          
+
+          
+          <details class="tt-models">
+            <summary>Model breakdown (5)</summary>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">gemini-3-flash-preview</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">claude-haiku-4.5</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">llama-3.3-70b-instruct</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">deepseek-chat</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">deepseek-v3.2</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
+            </div>
+            
+          </details>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    
+    
     
   </div>
 
@@ -710,21 +815,25 @@
     
     <span class="risk-tag">Longevity risk</span>
     
-    <span class="risk-tag">Market risk (spread, interest rate, inflation)</span>
+    <span class="risk-tag">Spread risk</span>
     
-    <span class="risk-tag">Credit risk</span>
+    <span class="risk-tag">Interest rate risk</span>
+    
+    <span class="risk-tag">Inflation rate risk</span>
+    
+    <span class="risk-tag">Operational risk</span>
+    
+    <span class="risk-tag">Counterparty risk</span>
+    
+    <span class="risk-tag">Cyber risk</span>
     
     <span class="risk-tag">Liquidity risk</span>
-    
-    <span class="risk-tag">Operational risk (including cyber)</span>
-    
-    <span class="risk-tag">Climate change risk</span>
     
   </div>
   
 
   
-  <h2>Section Analysis (Word Count)</h2>
+  <h2>Disclosure Depth by Section</h2>
   <div class="card" style="margin-bottom: 1.5rem;">
     <div class="section-bars">
       
@@ -785,32 +894,37 @@
   <h2>Material Changes Noted</h2>
   <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
     
-    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Implementation of Solvency UK Reforms (replacing Solvency II assimilated law)</li>
+    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Refinancing of £400m Tier 2 debt with new £750m issuance (GBP and USD markets)</li>
     
-    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Adoption of CMI 2023 mortality improvement model</li>
+    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Establishment of new investment entities (FCT Morisot, Lambay Capital) for French home loans</li>
     
-    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Issuance of first US dollar Tier 2 debt ($325m)</li>
+    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Transition to Full Internal Model (FIM) from PIM in 2023 now being the comparative baseline</li>
     
-    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">First investment in French home loans and related SPV consolidation (FCT Morisot)</li>
-    
-    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Leasehold and Freehold Reform Act 2024 impact on residential freehold assets</li>
+    <li style="margin-bottom: 0.4rem; font-size: 0.85rem;">Implementation of Solvency UK reforms at year-end 2024</li>
     
   </ul>
+  
+
+  
+  <h2>Stress Test & Scenario Analysis</h2>
+  <div class="card" style="margin-bottom: 1.5rem; font-size: 0.85rem; line-height: 1.6;">
+    Regular stress testing and live monitoring are used to manage the trade-offs between solvency position and embedded value. Sensitivities provided include +/- 100bps interest rate/inflation moves, 5% mortality shifts, and 100bps credit spread widening.
+  </div>
   
 
   
   <h2>Executive Summary Themes</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
     
-    <span class="tag">UK&#39;s largest specialist pensions insurer</span>
+    <span class="tag">UK largest specialist pensions insurer</span>
     
-    <span class="tag">Strong new business growth (£15.7bn)</span>
+    <span class="tag">Strong 2024 performance with £15.7bn new business</span>
     
-    <span class="tag">Robust solvency position (261% Group coverage)Index</span>
+    <span class="tag">Robust solvency cover (Group 261% / RLP 264%)</span>
     
-    <span class="tag">Focus on Bulk Purchase Annuity (BPA) market</span>
+    <span class="tag">Prudent investment and risk management approach</span>
     
-    <span class="tag">Dynamic capital and risk management</span>
+    <span class="tag">Successful Tier 2 debt refinancing and capitalization</span>
     
   </div>
   
@@ -826,8 +940,46 @@
 </p>
 
 <script>
-// Make zip() available in Jinja2 context — handled server-side, no JS needed.
-// This script is intentionally empty; all interactivity is pure CSS.
+// Reposition tooltips so they stay within the viewport.
+// CSS handles show/hide; JS only adjusts left offset and flips above/below.
+document.querySelectorAll('.metric-wrapper').forEach(function(wrapper) {
+  var tooltip = wrapper.querySelector('.tooltip-box');
+  if (!tooltip) return;
+  wrapper.addEventListener('mouseenter', function() {
+    // Reset to default centred position first
+    tooltip.style.left = '50%';
+    tooltip.style.right = 'auto';
+    tooltip.style.bottom = 'calc(100% + 10px)';
+    tooltip.style.top = 'auto';
+    tooltip.style.transform = 'translateX(-50%)';
+    tooltip.style.removeProperty('--tip-left');
+
+    var tipW = 380;
+    var wRect = wrapper.getBoundingClientRect();
+    var viewW = document.documentElement.clientWidth;
+
+    // Horizontal nudge: keep tooltip 12px inside each edge
+    var centredLeft = wRect.left + wRect.width / 2 - tipW / 2;
+    var centredRight = centredLeft + tipW;
+    var nudge = 0;
+    if (centredRight > viewW - 12) nudge = -(centredRight - viewW + 12);
+    else if (centredLeft < 12) nudge = 12 - centredLeft;
+
+    if (nudge !== 0) {
+      tooltip.style.transform = 'translateX(calc(-50% + ' + nudge + 'px))';
+    }
+
+    // Flip below if not enough room above
+    if (wRect.top < 340) {
+      tooltip.style.bottom = 'auto';
+      tooltip.style.top = 'calc(100% + 10px)';
+      // Move caret to top of tooltip
+      tooltip.classList.add('flipped');
+    } else {
+      tooltip.classList.remove('flipped');
+    }
+  });
+});
 </script>
 </body>
 </html>
