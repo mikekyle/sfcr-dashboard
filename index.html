@@ -4,254 +4,382 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SFCR Scanner — UK Life Insurer Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3e;
-    --text: #e2e8f0; --muted: #8892a4; --accent: #6366f1;
-    --green: #22c55e; --amber: #f59e0b; --red: #ef4444;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; padding: 2rem; }
-  h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
-  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
-  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 8px; overflow: hidden; }
-  th { background: var(--border); color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.75rem 1rem; text-align: left; }
-  td { padding: 0.75rem 1rem; border-top: 1px solid var(--border); font-size: 0.9rem; }
-  tr:hover td { background: rgba(99,102,241,0.05); }
-  .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
-  .badge-green { background: rgba(34,197,94,0.15); color: var(--green); }
-  .badge-amber { background: rgba(245,158,11,0.15); color: var(--amber); }
-  .badge-red { background: rgba(239,68,68,0.15); color: var(--red); }
-  .badge-muted { background: rgba(136,146,164,0.15); color: var(--muted); }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .footer { color: var(--muted); font-size: 0.75rem; margin-top: 2rem; }
-  .scr-value { font-weight: 700; }
-  .scr-high { color: var(--green); }
-  .scr-mid { color: var(--amber); }
-  .scr-low { color: var(--red); }
+/* SFCR Dashboard — shared theme (see docs/STYLING.md) */
+
+:root {
+  --bg: #0f1f24;
+  --surface: #1a3339;
+  --surface-raised: #1f4954;
+  --border: #2a4750;
+  --text: #e8f2f0;
+  --muted: #7aa8b8;
+  --accent: #5eb8c9;
+  --accent-warm: #D67A60;
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Source Sans Pro', 'Helvetica Neue', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent-warm);
+  color: #fff;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-smooth);
+}
+a:hover {
+  color: var(--accent-warm);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ── Page header ── */
+.page-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header .back {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.page-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+}
+
+.page-subtitle {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.title-divider {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1rem 0 0;
+  border-radius: 2px;
+}
+
+/* ── Section headings ── */
+h2, .section-heading {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+}
+
+/* ── Cards (shared base) ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: transform 0.25s var(--ease-spring), border-color 0.25s var(--ease-smooth);
+}
+
+.card:hover {
+  border-color: var(--surface-raised);
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-green { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-amber { background: rgba(245,158,11,0.15); color: var(--amber); }
+.badge-red { background: rgba(239,68,68,0.15); color: var(--red); }
+.badge-muted { background: rgba(122,168,184,0.15); color: var(--muted); }
+
+.green { color: var(--green); }
+.amber { color: var(--amber); }
+.red { color: var(--red); }
+
+/* ── Footer ── */
+.site-footer {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  line-height: 1.7;
+}
+
+.site-footer a { font-weight: 600; }
+
+/* ── Animations ── */
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-header.reveal {
+  animation: fadeUpIn 0.9s 0.05s var(--ease-spring) both;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-on-scroll.revealed {
+  animation: cardReveal 0.65s var(--ease-spring) both;
+}
+
+@media (max-width: 640px) {
+  body { padding: 1.25rem; }
+}
+/* Index / tracker page */
+
+.page-shell { max-width: 1200px; }
+
+.tracker-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tracker-table th {
+  background: var(--surface-raised);
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tracker-table td {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.tracker-table tbody tr {
+  transition: background 0.2s var(--ease-smooth);
+}
+
+.tracker-table tbody tr:hover td {
+  background: rgba(94, 184, 201, 0.06);
+}
+
+.tracker-table strong {
+  font-weight: 600;
+}
+
+.scr-value { font-weight: 700; }
+.scr-high { color: var(--green); }
+.scr-mid { color: var(--amber); }
+.scr-low { color: var(--red); }
+
+.detail-link {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.detail-link::after {
+  content: " →";
+  transition: color 0.2s;
+}
+
+.detail-link:hover::after {
+  color: var(--accent-warm);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 3rem;
+}
+
+.empty-state code {
+  background: var(--surface-raised);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
 </style>
 </head>
 <body>
-<h1>SFCR Scanner</h1>
-<p class="subtitle">UK Life Insurer Regulatory Disclosure Tracker &mdash; Generated 2026-04-06 21:32 UTC</p>
+<div class="page-shell">
+  <header class="page-header reveal">
+    <h1 class="page-title">SFCR Scanner</h1>
+    <p class="page-subtitle">UK Life Insurer Regulatory Disclosure Tracker &mdash; Generated 2026-06-14 23:46 UTC</p>
+    <span class="title-divider"></span>
+  </header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Insurer</th>
-      <th>Latest Year</th>
-      <th>SCR Ratio</th>
-      <th>Own Funds (£m)</th>
-      <th>Status</th>
-      <th>Detail</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-      
+  <table class="tracker-table">
+    <thead>
       <tr>
-        <td><strong>Aegon UK</strong></td>
-        <td>2025</td>
-        <td>
-          
-            
-            <span class="scr-value scr-high">194%</span>
-          
-        </td>
-        <td>
-          
-            £2,484m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="aegon.html">View →</a></td>
+        <th>Insurer</th>
+        <th>Latest Year</th>
+        <th>SCR Ratio</th>
+        <th>Own Funds (£m)</th>
+        <th>Status</th>
+        <th>Detail</th>
       </tr>
+    </thead>
+    <tbody>
       
-      <tr>
-        <td><strong>Aviva</strong></td>
-        <td>2024</td>
-        <td>
-          
+        
+        <tr class="reveal-on-scroll">
+          <td><strong>Rothesay Life</strong></td>
+          <td>2024</td>
+          <td>
             
-            <span class="scr-value scr-high">164%</span>
-          
-        </td>
-        <td>
-          
-            £9,086m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="aviva.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>Canada Life UK</strong></td>
-        <td>2025</td>
-        <td>
-          
+              
+              <span class="scr-value scr-high">264%</span>
             
-            <span class="scr-value scr-high">162%</span>
-          
-        </td>
-        <td>
-          
-            £3,446m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="canadalife.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>Legal &amp; General Group</strong></td>
-        <td>2024</td>
-        <td>
-          
+          </td>
+          <td>
             
-            <span class="scr-value scr-high">220%</span>
-          
-        </td>
-        <td>
-          
-            £9,236m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="legalandgeneral.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>LV=</strong></td>
-        <td>2024</td>
-        <td>
-          
+              £8,628m
             
-            <span class="scr-value scr-high">185%</span>
-          
-        </td>
-        <td>
-          
-            £885m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="lv.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>Standard Life plc</strong></td>
-        <td>2024</td>
-        <td>
-          
+          </td>
+          <td><span class="badge badge-green">Processed</span></td>
+          <td><a class="detail-link" href="rothesay.html">View</a></td>
+        </tr>
+        
+        <tr class="reveal-on-scroll">
+          <td><strong>Aviva</strong></td>
+          <td>2024</td>
+          <td>
             
-            <span class="scr-value scr-low">120%</span>
-          
-        </td>
-        <td>
-          
-            £4m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="phoenix.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>Rothesay Life</strong></td>
-        <td>2024</td>
-        <td>
-          
+              
+              <span class="scr-value scr-high">164%</span>
             
-            <span class="scr-value scr-high">264%</span>
-          
-        </td>
-        <td>
-          
-            £8,628m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="rothesay.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>Royal London</strong></td>
-        <td>2025</td>
-        <td>
-          
+          </td>
+          <td>
             
-            <span class="scr-value scr-high">183%</span>
-          
-        </td>
-        <td>
-          
-            £5,566m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="royallondon.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>Scottish Widows</strong></td>
-        <td>2025</td>
-        <td>
-          
+              £9,086m
             
-            <span class="scr-value scr-mid">144%</span>
-          
-        </td>
-        <td>
-          
-            £8,229m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="scottishwidows.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>Unum UK</strong></td>
-        <td>2024</td>
-        <td>
-          
+          </td>
+          <td><span class="badge badge-green">Processed</span></td>
+          <td><a class="detail-link" href="aviva.html">View</a></td>
+        </tr>
+        
+        <tr class="reveal-on-scroll">
+          <td><strong>Legal &amp; General Group</strong></td>
+          <td>2024</td>
+          <td>
             
-            <span class="scr-value scr-high">204%</span>
-          
-        </td>
-        <td>
-          
-            £750m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="unum.html">View →</a></td>
-      </tr>
-      
-      <tr>
-        <td><strong>Vitality Life</strong></td>
-        <td>2025</td>
-        <td>
-          
+              
+              <span class="scr-value scr-high">220%</span>
             
-            <span class="scr-value scr-high">165%</span>
-          
-        </td>
-        <td>
-          
-            £664m
-          
-        </td>
-        <td><span class="badge badge-green">Processed</span></td>
-        <td><a href="vitality.html">View →</a></td>
-      </tr>
+          </td>
+          <td>
+            
+              £9,236m
+            
+          </td>
+          <td><span class="badge badge-green">Processed</span></td>
+          <td><a class="detail-link" href="legalandgeneral.html">View</a></td>
+        </tr>
+        
       
-    
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<p class="footer">Data extracted by SFCR Scanner. Sources: sfcrdatabase.com, company IR pages, Solvency II Wire. Always verify figures against original documents.</p>
+  <footer class="site-footer">
+  Data extracted by SFCR Scanner. Always verify figures against original documents.
+  <br>
+  <a href="https://mikekyle.github.io/">mikekyle.github.io</a>
+  &middot;
+  <a href="https://github.com/mikekyle/sfcr-scanner">source</a>
+  </footer>
+</div>
+
+<script>
+/* Staggered reveal — adapted from mikekyle.github.io/script.js */
+(function () {
+  'use strict';
+
+  var revealItems = document.querySelectorAll('.reveal-on-scroll');
+  if (!revealItems.length) return;
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+
+          var el = entry.target;
+          var siblings = Array.from(
+            el.parentElement.querySelectorAll('.reveal-on-scroll')
+          );
+          var idx = siblings.indexOf(el);
+          var delay = idx * 80;
+
+          setTimeout(function () {
+            el.classList.add('revealed');
+          }, delay);
+
+          observer.unobserve(el);
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -20px 0px' }
+    );
+
+    revealItems.forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    revealItems.forEach(function (el) {
+      el.classList.add('revealed');
+      el.style.opacity = '1';
+    });
+  }
+})();
+</script>
 </body>
 </html>
