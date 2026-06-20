@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Who has solvency headroom?",
+    "source": "mikekyle/sfcr-dashboard",
+    "source_url": "https://mikekyle.github.io/sfcr-dashboard/",
+    "metric": "SCR coverage ratio (%)",
+    "regulatory_minimum_pct": 100,
+    "fetched": "2026-06-20"
+  },
+  "insurers": [
+    {
+      "slug": "rothesay",
+      "name": "Rothesay",
+      "scr_ratio_pct": 264.0,
+      "own_funds": "\u00a38,628m"
+    },
+    {
+      "slug": "legalandgeneral",
+      "name": "L&G",
+      "scr_ratio_pct": 220.0,
+      "own_funds": "\u00a39,236m"
+    },
+    {
+      "slug": "unum",
+      "name": "Unum",
+      "scr_ratio_pct": 204.0,
+      "own_funds": "\u00a3750m"
+    },
+    {
+      "slug": "aegon",
+      "name": "Aegon UK",
+      "scr_ratio_pct": 194.0,
+      "own_funds": "\u00a32,484m"
+    },
+    {
+      "slug": "lv",
+      "name": "LV=",
+      "scr_ratio_pct": 185.0,
+      "own_funds": "\u00a3885m"
+    },
+    {
+      "slug": "royallondon",
+      "name": "Royal London",
+      "scr_ratio_pct": 183.0,
+      "own_funds": "\u00a35,566m"
+    },
+    {
+      "slug": "vitality",
+      "name": "Vitality",
+      "scr_ratio_pct": 165.0,
+      "own_funds": "\u00a3664m"
+    },
+    {
+      "slug": "aviva",
+      "name": "Aviva",
+      "scr_ratio_pct": 164.0,
+      "own_funds": "\u00a39,086m"
+    },
+    {
+      "slug": "canadalife",
+      "name": "Canada Life",
+      "scr_ratio_pct": 162.0,
+      "own_funds": "\u00a33,446m"
+    },
+    {
+      "slug": "scottishwidows",
+      "name": "Scottish Widows",
+      "scr_ratio_pct": 144.0,
+      "own_funds": "\u00a38,229m"
+    },
+    {
+      "slug": "phoenix",
+      "name": "Phoenix / Std Life",
+      "scr_ratio_pct": 120.0,
+      "own_funds": "\u00a34m"
+    }
+  ],
+  "stats": {
+    "count": 11,
+    "median_scr": 183.0,
+    "min_scr": 120.0,
+    "max_scr": 264.0,
+    "min_name": "Phoenix / Std Life",
+    "max_name": "Rothesay",
+    "below_150": 2
+  }
+}

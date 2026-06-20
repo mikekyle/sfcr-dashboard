@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who has solvency headroom?</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-preset="sfcr">
+
+<header class="hero">
+  <p class="eyebrow">UK life insurers · SFCR snapshot</p>
+  <h1>Who has solvency headroom?</h1>
+  <p class="dek">Eleven insurers, one headline metric — how far above the regulatory floor does each sit on SCR coverage?</p>
+</header>
+
+<section id="scrolly">
+  <div class="scrolly-inner">
+    <div class="graphic-pane" aria-live="polite">
+      <div id="graphic" role="img" aria-label="SCR coverage chart"></div>
+    </div>
+    <div class="step-pane">
+
+      <div class="step" data-step="0">
+        <p>UK life insurers publish a solvency ratio every year. The one everyone watches first is <strong>SCR coverage</strong> — own funds as a percentage of the capital requirement.</p>
+      </div>
+
+      <div class="step" data-step="1">
+        <p>Regulators set a hard floor at <strong>100%</strong>. Below that, you're in breach. Above it, you're solvent — but how far above matters for headroom.</p>
+      </div>
+
+      <div class="step" data-step="2">
+        <p>Here's the field — eleven insurers from the latest dashboard snapshot, sorted high to low. Every bar clears the floor. The question is <strong>by how much</strong>.</p>
+      </div>
+
+      <div class="step" data-step="3">
+        <p>At the extremes: <strong>Rothesay</strong> tops the chart at 264%. <strong>Phoenix / Standard Life</strong> sits lowest at 120% — still solvent, but with the least cushion in this group.</p>
+      </div>
+
+      <div class="step" data-step="4">
+        <p>The middle of the pack lands around <strong>183%</strong> — the median SCR ratio. Most names cluster comfortably above the line, not hugging it.</p>
+      </div>
+
+      <div class="step" data-step="5">
+        <p>Only <strong>two</strong> insurers sit below 150%: Phoenix and <strong>Scottish Widows</strong> (144%). Not a crisis — but tighter than peers.</p>
+      </div>
+
+      <div class="step" data-step="6">
+        <p>A <strong>144 percentage-point</strong> spread from top to bottom. On paper they all pass — but headroom is not evenly distributed.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="method">
+  <h2>Method</h2>
+  <p>SCR coverage ratios from the <a href="https://mikekyle.github.io/sfcr-dashboard/">SFCR dashboard</a> snapshot (20 Jun 2026). Eleven UK life insurers with published ratios in the scanner set. Regulatory minimum 100% per Solvency II.</p>
+</section>
+
+<footer class="footer">
+  <p><a href="https://github.com/mikekyle/skills/tree/main/examples/sfcr-comparison">Source</a></p>
+</footer>
+
+<script src="https://unpkg.com/intersection-observer@0.12.2/intersection-observer.js"></script>
+<script src="https://unpkg.com/scrollama@3.2.0/build/scrollama.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="data/story-data.js"></script>
+<script src="js/viz.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
