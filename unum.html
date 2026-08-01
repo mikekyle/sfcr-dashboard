@@ -146,6 +146,17 @@ a:hover {
   font-size: 0.75rem;
 }
 
+.page-subtitle .season-chip {
+  display: inline-block;
+  margin: 0 0.45rem 0 0.15rem;
+  color: var(--accent-warm);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .title-divider {
   display: block;
   width: 48px;
@@ -675,7 +686,7 @@ h2, .section-heading {
   <header class="page-header reveal">
     <a class="back" href="index.html">&larr; Back to tracker</a>
     <h1 class="page-title">Unum UK</h1>
-    <p class="page-subtitle"><span class="generated-at">Generated 2026-07-31 16:47 UTC</span></p>
+    <p class="page-subtitle"><span class="generated-at">Generated 2026-08-01 14:11 UTC</span></p>
     
       
       
@@ -722,7 +733,7 @@ h2, .section-heading {
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big high">88%</span>
+            <span class="tt-score-big high">89%</span>
             <div>
               <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
@@ -733,7 +744,7 @@ h2, .section-heading {
           <div class="tt-agreement">
             Moderate agreement
             
-            between models (variance 9.2)
+            between models (variance 9.6)
           </div>
           
 
@@ -742,13 +753,13 @@ h2, .section-heading {
             <div class="tt-section-label">Source Quote</div>
             <div class="tt-quote">"Solvency Ratio 179% 204%"</div>
             
-            <div class="tt-location">Section E.1.2, page 75</div>
+            <div class="tt-location">Summary - high-level solvency ratio table (Unum Limited)</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote contains the exact numerical value and the standard equivalent term (Solvency Ratio), but the presence of a second percentage (204%) without contextual labels in the snippet introduces slight ambiguity regarding which year or entity the 179% represents.</div>
+            <div class="tt-reasoning">The quote explicitly states &#34;Solvency Ratio 179%&#34;, and &#34;Solvency Ratio&#34; is the SCR ratio under Solvency II, directly matching the extracted value of 179.0 (179%), with only minor ambiguity from the additional 204% figure.</div>
           
 
           
@@ -756,28 +767,28 @@ h2, .section-heading {
             <summary>Model breakdown (5)</summary>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--green)">85%</span>
+              <span class="tt-model-name">deepseek-v4-flash-0731</span>
+              <span class="tt-model-score" style="color: var(--green)">90%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">claude-haiku-4.5</span>
-              <span class="tt-model-score" style="color: var(--amber)">75%</span>
+              <span class="tt-model-score" style="color: var(--amber)">72%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">98%</span>
+              <span class="tt-model-name">gpt-5-nano</span>
+              <span class="tt-model-score" style="color: var(--green)">92%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-chat</span>
+              <span class="tt-model-name">gemini-2.5-flash</span>
               <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-v3.2</span>
-              <span class="tt-model-score" style="color: var(--green)">85%</span>
+              <span class="tt-model-name">llama-4-maverick</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
           </details>
@@ -816,22 +827,22 @@ h2, .section-heading {
           <div class="tt-agreement">
             Strong agreement
             
-            between models (variance 4.1)
+            between models (variance 2.1)
           </div>
           
 
           
           
             <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"Ratio of Eligible Own Funds to MCR 319% 375%"</div>
+            <div class="tt-quote">"Ratio of Eligible Own Funds to MCR 319%"</div>
             
-            <div class="tt-location">Section E.1.2, page 75</div>
+            <div class="tt-location">Section E.1.2 - Unum Limited: Eligible Own Funds</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states &#34;319%&#34; as the Ratio of Eligible Own Funds to MCR, directly matching the extracted value of 319.0.</div>
+            <div class="tt-reasoning">The quote explicitly states &#39;Ratio of Eligible Own Funds to MCR 319%&#39;, which exactly matches the extracted value (319.0) when expressed as a percentage; no interpretation or conversion needed, and it clearly refers to the MCR ratio.</div>
           
 
           
@@ -839,7 +850,7 @@ h2, .section-heading {
             <summary>Model breakdown (5)</summary>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">gemini-3-flash-preview</span>
+              <span class="tt-model-name">deepseek-v4-flash-0731</span>
               <span class="tt-model-score" style="color: var(--green)">98%</span>
             </div>
             
@@ -849,17 +860,17 @@ h2, .section-heading {
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-name">gpt-5-nano</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-chat</span>
-              <span class="tt-model-score" style="color: var(--green)">90%</span>
+              <span class="tt-model-name">gemini-2.5-flash</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-v3.2</span>
+              <span class="tt-model-name">llama-4-maverick</span>
               <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
@@ -889,7 +900,7 @@ h2, .section-heading {
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big high">93%</span>
+            <span class="tt-score-big high">83%</span>
             <div>
               <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
@@ -898,24 +909,24 @@ h2, .section-heading {
 
           
           <div class="tt-agreement">
-            Moderate agreement
+            Notable disagreement
             
-            between models (variance 12.2)
+            between models (variance 24.3)
           </div>
           
 
           
           
             <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"Eligible Own Funds (£m) ... 31 December 2025 ... 663.4"</div>
+            <div class="tt-quote">"Eligible Own Funds 663.4 749.8"</div>
             
-            <div class="tt-location">Section E.1.2, page 75</div>
+            <div class="tt-location">Summary - high-level solvency ratio table (Unum Limited)</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states the exact value &#34;663.4&#34; for &#34;Eligible Own Funds&#34; which directly corresponds to &#34;Own Funds Total&#34; with proper unit notation.</div>
+            <div class="tt-reasoning">The quote explicitly states &#34;Eligible Own Funds 663.4&#34; which directly matches the extracted value and metric name, with minimal ambiguity—the 663.4 figure is unambiguously labeled as Eligible Own Funds in a solvency ratio table.</div>
           
 
           
@@ -923,27 +934,27 @@ h2, .section-heading {
             <summary>Model breakdown (5)</summary>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-name">deepseek-v4-flash-0731</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">claude-haiku-4.5</span>
-              <span class="tt-model-score" style="color: var(--amber)">72%</span>
+              <span class="tt-model-score" style="color: var(--green)">92%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-name">gpt-5-nano</span>
+              <span class="tt-model-score" style="color: var(--red)">40%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-chat</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-name">gemini-2.5-flash</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-v3.2</span>
+              <span class="tt-model-name">llama-4-maverick</span>
               <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
@@ -973,7 +984,7 @@ h2, .section-heading {
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big high">81%</span>
+            <span class="tt-score-big high">94%</span>
             <div>
               <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
@@ -982,24 +993,24 @@ h2, .section-heading {
 
           
           <div class="tt-agreement">
-            Notable disagreement
+            Strong agreement
             
-            between models (variance 24.8)
+            between models (variance 5.5)
           </div>
           
 
           
           
             <div class="tt-section-label">Source Quote</div>
-            <div class="tt-quote">"Our in-force premiums increased by 9% to £742.0 million (2024: £682.8 million)"</div>
+            <div class="tt-quote">"Gross Written Premiums 397.2 268.7 76.1 742.0"</div>
             
-            <div class="tt-location">Summary, page 3</div>
+            <div class="tt-location">Section A.2 - Underwriting performance table</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states the exact value of £742.0 million for in-force premiums, which directly corresponds to Gross Written Premium.</div>
+            <div class="tt-reasoning">The quote explicitly lists &#34;Gross Written Premiums&#34; with the value 742.0 appearing as the total in the row, directly matching the extracted metric and value.</div>
           
 
           
@@ -1007,28 +1018,28 @@ h2, .section-heading {
             <summary>Model breakdown (5)</summary>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--amber)">65%</span>
+              <span class="tt-model-name">deepseek-v4-flash-0731</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
               <span class="tt-model-name">claude-haiku-4.5</span>
-              <span class="tt-model-score" style="color: var(--red)">45%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-chat</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-v3.2</span>
               <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">gpt-5-nano</span>
+              <span class="tt-model-score" style="color: var(--green)">85%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">gemini-2.5-flash</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">llama-4-maverick</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
             </div>
             
           </details>
@@ -1056,7 +1067,7 @@ h2, .section-heading {
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big high">98%</span>
+            <span class="tt-score-big high">96%</span>
             <div>
               <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
@@ -1067,7 +1078,7 @@ h2, .section-heading {
           <div class="tt-agreement">
             Strong agreement
             
-            between models (variance 2.7)
+            between models (variance 2.2)
           </div>
           
 
@@ -1076,13 +1087,13 @@ h2, .section-heading {
             <div class="tt-section-label">Source Quote</div>
             <div class="tt-quote">"Technical provisions (1,692.2) (2,004.7) 312.5"</div>
             
-            <div class="tt-location">Section D, page 50</div>
+            <div class="tt-location">Section D - SII Solo Balance Sheet (Unum Limited)</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly lists the metric &#39;Technical provisions&#39; alongside the exact figure &#39;1,692.2&#39;, formatted as it typically appears in a financial comparative table.</div>
+            <div class="tt-reasoning">The quote explicitly states &#34;Technical provisions (1,692.2)&#34; which directly lists the exact value for this exact metric with no interpretation needed.</div>
           
 
           
@@ -1090,8 +1101,8 @@ h2, .section-heading {
             <summary>Model breakdown (5)</summary>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-name">deepseek-v4-flash-0731</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
@@ -1100,18 +1111,18 @@ h2, .section-heading {
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-chat</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-v3.2</span>
+              <span class="tt-model-name">gpt-5-nano</span>
               <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">gemini-2.5-flash</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">llama-4-maverick</span>
+              <span class="tt-model-score" style="color: var(--green)">100%</span>
             </div>
             
           </details>
@@ -1139,7 +1150,7 @@ h2, .section-heading {
         
         <div class="tooltip-box">
           <div class="tt-score-row">
-            <span class="tt-score-big high">97%</span>
+            <span class="tt-score-big high">95%</span>
             <div>
               <span class="tt-level-pill high">high</span><br>
               <span style="font-size:0.7rem; color:var(--muted);">5 model ensemble</span>
@@ -1150,7 +1161,7 @@ h2, .section-heading {
           <div class="tt-agreement">
             Strong agreement
             
-            between models (variance 2.2)
+            between models (variance 0.9)
           </div>
           
 
@@ -1159,13 +1170,13 @@ h2, .section-heading {
             <div class="tt-section-label">Source Quote</div>
             <div class="tt-quote">"Solvency Capital Requirement 371.1 367.5"</div>
             
-            <div class="tt-location">Section E.1.2, page 75</div>
+            <div class="tt-location">Summary - high-level solvency ratio table (Unum Limited)</div>
             
           
 
           
             <div class="tt-section-label">Evaluator Reasoning</div>
-            <div class="tt-reasoning">The quote explicitly states the number 371.1 in relation to the Solvency Capital Requirement, which directly supports the extracted value.</div>
+            <div class="tt-reasoning">The quote explicitly states &#34;Solvency Capital Requirement 371.1&#34; which directly matches the extracted value with perfect precision, in the appropriate financial summary context with no ambiguity.</div>
           
 
           
@@ -1173,8 +1184,8 @@ h2, .section-heading {
             <summary>Model breakdown (5)</summary>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">gemini-3-flash-preview</span>
-              <span class="tt-model-score" style="color: var(--green)">100%</span>
+              <span class="tt-model-name">deepseek-v4-flash-0731</span>
+              <span class="tt-model-score" style="color: var(--green)">93%</span>
             </div>
             
             <div class="tt-model-row">
@@ -1183,18 +1194,18 @@ h2, .section-heading {
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">llama-3.3-70b-instruct</span>
-              <span class="tt-model-score" style="color: var(--green)">98%</span>
-            </div>
-            
-            <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-chat</span>
+              <span class="tt-model-name">gpt-5-nano</span>
               <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
             <div class="tt-model-row">
-              <span class="tt-model-name">deepseek-v3.2</span>
-              <span class="tt-model-score" style="color: var(--green)">98%</span>
+              <span class="tt-model-name">gemini-2.5-flash</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
+            </div>
+            
+            <div class="tt-model-row">
+              <span class="tt-model-name">llama-4-maverick</span>
+              <span class="tt-model-score" style="color: var(--green)">95%</span>
             </div>
             
           </details>
@@ -1214,17 +1225,43 @@ h2, .section-heading {
   <h2 class="section-heading">Key Risks Identified</h2>
   <div class="risks">
     
-    <span class="risk-tag">Underwriting/Insurance Risk</span>
+    <span class="risk-tag">underwriting/insurance risk</span>
     
-    <span class="risk-tag">Market Risk</span>
+    <span class="risk-tag">termination risk</span>
     
-    <span class="risk-tag">Credit Risk</span>
+    <span class="risk-tag">inception risk</span>
     
-    <span class="risk-tag">Operational Risk and Conduct Risk</span>
+    <span class="risk-tag">pandemic risk</span>
     
-    <span class="risk-tag">Termination and Inception Risks (Morbidity)</span>
+    <span class="risk-tag">catastrophe concentration risk</span>
     
-    <span class="risk-tag">Pandemic Risk</span>
+    <span class="risk-tag">longevity risk</span>
+    
+    <span class="risk-tag">market risk</span>
+    
+    <span class="risk-tag">interest rate risk</span>
+    
+    <span class="risk-tag">inflation rate risk</span>
+    
+    <span class="risk-tag">credit risk</span>
+    
+    <span class="risk-tag">credit spread risk</span>
+    
+    <span class="risk-tag">liquidity risk</span>
+    
+    <span class="risk-tag">operational risk</span>
+    
+    <span class="risk-tag">conduct risk</span>
+    
+    <span class="risk-tag">cyber risk</span>
+    
+    <span class="risk-tag">climate change risk</span>
+    
+    <span class="risk-tag">AI risk</span>
+    
+    <span class="risk-tag">group risk</span>
+    
+    <span class="risk-tag">strategy risk</span>
     
   </div>
   
@@ -1246,7 +1283,7 @@ h2, .section-heading {
       <div class="bar-row">
         <span class="bar-label">D_valuation</span>
         <div class="bar-track">
-          <div class="bar-fill" style="width: 78%"></div>
+          <div class="bar-fill" style="width: 80%"></div>
         </div>
         <span class="bar-val">13,413</span>
       </div>
@@ -1280,7 +1317,7 @@ h2, .section-heading {
         <div class="bar-track">
           <div class="bar-fill" style="width: 100%"></div>
         </div>
-        <span class="bar-val">17,122</span>
+        <span class="bar-val">16,659</span>
       </div>
       
     </div>
@@ -1291,13 +1328,19 @@ h2, .section-heading {
   <h2 class="section-heading">Material Changes Noted</h2>
   <ul class="prose-list">
     
-    <li>Entry into an arrangement with Generali to join their global employee benefits distribution network (Q3 2025)</li>
+    <li>Generali global employee benefits distribution arrangement (effective Q3 2025) incl. quota-share reinsurance, not material to 2025 but more significant in future years</li>
     
-    <li>Expansion into the UK health cash plan market with the launch of Health Plan 360</li>
+    <li>Launch of Health Plan 360 UK health cash plan product</li>
     
-    <li>Significant increase in dividends paid to shareholders (£160m vs £70m prior year)</li>
+    <li>Increase in insurance risk SCR due to business growth and changes to reinsurance arrangements</li>
     
-    <li>Implementation of reformed PRA Rules and Solvency II Regulations (2024 reform)</li>
+    <li>Decrease in market risk SCR due to lower interest rate stress capital</li>
+    
+    <li>Updates to key technical provision assumptions (termination rates, loss ratios, longevity, inception, lapse and expense assumptions)</li>
+    
+    <li>Recapture of quota share reinsurance treaty for certain GIP claims approved after balance sheet date</li>
+    
+    <li>Solvency ratio decreased to 179% (2024: 204%) mainly due to £160.0m dividend payments</li>
     
   </ul>
   
@@ -1305,7 +1348,7 @@ h2, .section-heading {
   
   <h2 class="section-heading">Stress Test & Scenario Analysis</h2>
   <div class="card prose-card">
-    The company conducts annual stress and scenario analysis (including 1-in-20 year stresses). Results as of 31 December 2025 show the firm is resilient, maintaining a solvency ratio well over 100% in all stresses. Most material sensitivities identified include morbidity termination, credit spread widening, morbidity inception, and mortality rates. Reverse stress tests confirm the likelihood of business model failure is remote.
+    Sensitivities on UL balance sheet at 31 Dec 2025 (net of tax): interest rate -50bps raises own funds £16m (SCR coverage -3%); credit spread +50bps reduces OF £29m (-8%); equity -10% reduces OF £5m; property -10% reduces OF £1m; morbidity termination rates -5% reduces OF £28m (-8%); morbidity inception +10% reduces OF £15m (-4%); mortality +10% reduces OF £14m (-4%). 1-in-20-year stress tests maintain solvency ratio well over 100% in all stresses; reverse stress test scenarios deemed remote.
   </div>
   
 
@@ -1313,15 +1356,15 @@ h2, .section-heading {
   <h2 class="section-heading">Executive Summary Themes</h2>
   <div class="tag-row">
     
-    <span class="tag">Strategic progress and growth in net earned premiums</span>
+    <span class="tag">Entered arrangement with Generali to join global employee benefits distribution network, incl. quota-share reinsurance</span>
     
-    <span class="tag">Partnership with Generali for global employee benefits</span>
+    <span class="tag">Launched Health Plan 360, entering the UK health cash plan market</span>
     
-    <span class="tag">Launch of ‘Health Plan 360’ in the UK health cash plan market</span>
+    <span class="tag">In-force premiums up 9% to £742.0m, net earned premiums up 6% to £673.5m, lives protected to 2.9m</span>
     
-    <span class="tag">Strong capital position maintained despite significant dividend payments</span>
+    <span class="tag">Regulatory solvency ratio 179% (2024: 204%), decrease mainly due to £160.0m dividends paid</span>
     
-    <span class="tag">Integration of ESG into strategy and investment decisions</span>
+    <span class="tag">S&amp;P Global Ratings reconfirmed financial strength rating A- (Stable) in December 2025</span>
     
   </div>
   
