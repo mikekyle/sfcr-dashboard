@@ -417,6 +417,64 @@ h2, .section-heading {
   font-size: 0.85em;
 }
 
+/* Older reports archive (collapsed by default) */
+.older-reports {
+  margin: 2.75rem 0 0;
+  border-top: 1px solid var(--border);
+  padding-top: 0.35rem;
+}
+
+.older-reports-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 0;
+  user-select: none;
+}
+
+.older-reports-summary::-webkit-details-marker {
+  display: none;
+}
+
+.older-reports-summary::before {
+  content: "▸";
+  color: var(--accent-warm);
+  font-size: 0.85rem;
+  line-height: 1;
+  transition: transform 0.2s var(--ease-smooth);
+}
+
+.older-reports[open] > .older-reports-summary::before {
+  transform: rotate(90deg);
+}
+
+.older-reports-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.older-reports-count {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.older-reports-body {
+  padding-bottom: 0.5rem;
+}
+
+.older-reports-body .report-section:first-child .section-heading {
+  margin-top: 1.25rem;
+}
+
 @media (max-width: 760px) {
   .tracker-table {
     min-width: 680px;
@@ -432,7 +490,7 @@ h2, .section-heading {
     <p class="page-subtitle">
       Solvency and half-year IFRS figures from public insurer reports.
       <span class="season-chip">HY season</span>
-      <span class="generated-at">Generated 2026-08-02 12:58 UTC</span>
+      <span class="generated-at">Generated 2026-08-02 18:47 UTC</span>
     </p>
     <span class="title-divider" aria-hidden="true"></span>
   </header>
@@ -442,10 +500,13 @@ h2, .section-heading {
   
 
   
-    <section class="report-section" data-report-kind="interim">
-      <h2 class="section-heading">Interim — Half-year IFRS 17</h2>
+
+  
+    
+  <section class="report-section" data-report-kind="interim" data-report-year="2026">
+    <h2 class="section-heading">HY 2026 — Half-year IFRS 17</h2>
+    
       
-        
   <div class="table-scroll">
     <table class="tracker-table">
       <thead>
@@ -460,109 +521,6 @@ h2, .section-heading {
       </thead>
       <tbody>
         
-          
-          <tr class="reveal-on-scroll">
-            <td><strong>Legal &amp; General Group</strong></td>
-            <td>2025</td>
-            <td>
-              
-                £859m
-              
-            </td>
-            <td>
-              
-                £12,106m
-              
-            </td>
-            <td>
-              
-                217%
-              
-            </td>
-            <td><a class="detail-link" href="legalandgeneral.html">View</a></td>
-          </tr>
-          
-          <tr class="reveal-on-scroll">
-            <td><strong>M&amp;G plc</strong></td>
-            <td>2025</td>
-            <td>
-              
-                £378m
-              
-            </td>
-            <td>
-              
-                £5,967m
-              
-            </td>
-            <td>
-              
-                230%
-              
-            </td>
-            <td><a class="detail-link" href="mandg.html">View</a></td>
-          </tr>
-          
-          <tr class="reveal-on-scroll">
-            <td><strong>Standard Life plc</strong></td>
-            <td>2025</td>
-            <td>
-              
-                £451m
-              
-            </td>
-            <td>
-              
-                £3,567m
-              
-            </td>
-            <td>
-              
-                175%
-              
-            </td>
-            <td><a class="detail-link" href="phoenix.html">View</a></td>
-          </tr>
-          
-          <tr class="reveal-on-scroll">
-            <td><strong>Rothesay Life</strong></td>
-            <td>2025</td>
-            <td>
-              
-                £347m
-              
-            </td>
-            <td>
-              
-                £7,380m
-              
-            </td>
-            <td>
-              
-                266%
-              
-            </td>
-            <td><a class="detail-link" href="rothesay.html">View</a></td>
-          </tr>
-          
-          <tr class="reveal-on-scroll">
-            <td><strong>Royal London</strong></td>
-            <td>2025</td>
-            <td>
-              
-                £166m
-              
-            </td>
-            <td>
-              —
-            </td>
-            <td>
-              
-                204%
-              
-            </td>
-            <td><a class="detail-link" href="royallondon.html">View</a></td>
-          </tr>
           
           <tr class="reveal-on-scroll">
             <td><strong>sjp</strong></td>
@@ -586,19 +544,21 @@ h2, .section-heading {
     </table>
   </div>
   
-      
-    </section>
+    
+  </section>
   
-    <section class="report-section" data-report-kind="sfcr">
-      <h2 class="section-heading">SFCR — Solvency &amp; Financial Condition</h2>
+  
+    
+  <section class="report-section" data-report-kind="sfcr" data-report-year="2025">
+    <h2 class="section-heading">SFCR 2025 — Solvency &amp; Financial Condition</h2>
+    
       
-        
   <div class="table-scroll">
     <table class="tracker-table">
       <thead>
         <tr>
           <th>Insurer</th>
-          <th>Latest year</th>
+          <th>Year</th>
           <th>SCR ratio</th>
           <th class="coverage-trail">Coverage trail</th>
           <th>Own funds (£m)</th>
@@ -671,38 +631,6 @@ h2, .section-heading {
             </td>
             <td><span class="badge badge-green">Processed</span></td>
             <td><a class="detail-link" href="aviva.html">View</a></td>
-          </tr>
-          
-          <tr class="reveal-on-scroll">
-            <td><strong>Canada Life UK</strong></td>
-            <td>2024</td>
-            <td>
-              
-                
-                <span class="scr-value scr-high">162%</span>
-              
-            </td>
-            
-            <td class="coverage-trail">
-              
-              
-                
-                
-                <div class="ticks" title="SCR history 2024–2024" aria-label="SCR coverage history">
-                  
-                    <span class="tick latest" style="--tick-h: 100%" title="2024: 162%"></span>
-                  
-                </div>
-              
-            </td>
-            
-            <td>
-              
-                £3,446m
-              
-            </td>
-            <td><span class="badge badge-green">Processed</span></td>
-            <td><a class="detail-link" href="canadalife.html">View</a></td>
           </tr>
           
           <tr class="reveal-on-scroll">
@@ -833,38 +761,6 @@ h2, .section-heading {
             </td>
             <td><span class="badge badge-green">Processed</span></td>
             <td><a class="detail-link" href="mandg.html">View</a></td>
-          </tr>
-          
-          <tr class="reveal-on-scroll">
-            <td><strong>Standard Life plc</strong></td>
-            <td>2024</td>
-            <td>
-              
-                
-                <span class="scr-value scr-low">120%</span>
-              
-            </td>
-            
-            <td class="coverage-trail">
-              
-              
-                
-                
-                <div class="ticks" title="SCR history 2024–2024" aria-label="SCR coverage history">
-                  
-                    <span class="tick latest" style="--tick-h: 100%" title="2024: 120%"></span>
-                  
-                </div>
-              
-            </td>
-            
-            <td>
-              
-                £4m
-              
-            </td>
-            <td><span class="badge badge-green">Processed</span></td>
-            <td><a class="detail-link" href="phoenix.html">View</a></td>
           </tr>
           
           <tr class="reveal-on-scroll">
@@ -1128,8 +1024,281 @@ h2, .section-heading {
     </table>
   </div>
   
+    
+  </section>
+  
+  
+
+  
+  <details class="older-reports reveal">
+    <summary class="older-reports-summary">
+      <span class="older-reports-title">Older reports</span>
+      <span class="older-reports-count">2 prior periods</span>
+    </summary>
+    <div class="older-reports-body">
       
-    </section>
+        
+  <section class="report-section" data-report-kind="interim" data-report-year="2025">
+    <h2 class="section-heading">HY 2025 — Half-year IFRS 17</h2>
+    
+      
+  <div class="table-scroll">
+    <table class="tracker-table">
+      <thead>
+        <tr>
+          <th>Insurer</th>
+          <th>Year</th>
+          <th>Operating profit</th>
+          <th>CSM total</th>
+          <th>SII ratio</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          
+          <tr class="reveal-on-scroll">
+            <td><strong>Legal &amp; General Group</strong></td>
+            <td>2025</td>
+            <td>
+              
+                £859m
+              
+            </td>
+            <td>
+              
+                £12,106m
+              
+            </td>
+            <td>
+              
+                217%
+              
+            </td>
+            <td><a class="detail-link" href="legalandgeneral.html">View</a></td>
+          </tr>
+          
+          <tr class="reveal-on-scroll">
+            <td><strong>M&amp;G plc</strong></td>
+            <td>2025</td>
+            <td>
+              
+                £378m
+              
+            </td>
+            <td>
+              
+                £5,967m
+              
+            </td>
+            <td>
+              
+                230%
+              
+            </td>
+            <td><a class="detail-link" href="mandg.html">View</a></td>
+          </tr>
+          
+          <tr class="reveal-on-scroll">
+            <td><strong>Standard Life plc</strong></td>
+            <td>2025</td>
+            <td>
+              
+                £451m
+              
+            </td>
+            <td>
+              
+                £3,567m
+              
+            </td>
+            <td>
+              
+                175%
+              
+            </td>
+            <td><a class="detail-link" href="phoenix.html">View</a></td>
+          </tr>
+          
+          <tr class="reveal-on-scroll">
+            <td><strong>Rothesay Life</strong></td>
+            <td>2025</td>
+            <td>
+              
+                £347m
+              
+            </td>
+            <td>
+              
+                £7,380m
+              
+            </td>
+            <td>
+              
+                266%
+              
+            </td>
+            <td><a class="detail-link" href="rothesay.html">View</a></td>
+          </tr>
+          
+          <tr class="reveal-on-scroll">
+            <td><strong>Royal London</strong></td>
+            <td>2025</td>
+            <td>
+              
+                £166m
+              
+            </td>
+            <td>
+              —
+            </td>
+            <td>
+              
+                204%
+              
+            </td>
+            <td><a class="detail-link" href="royallondon.html">View</a></td>
+          </tr>
+          
+        
+      </tbody>
+    </table>
+  </div>
+  
+    
+  </section>
+  
+      
+        
+  <section class="report-section" data-report-kind="sfcr" data-report-year="2024">
+    <h2 class="section-heading">SFCR 2024 — Solvency &amp; Financial Condition</h2>
+    
+      
+  <div class="table-scroll">
+    <table class="tracker-table">
+      <thead>
+        <tr>
+          <th>Insurer</th>
+          <th>Year</th>
+          <th>SCR ratio</th>
+          <th class="coverage-trail">Coverage trail</th>
+          <th>Own funds (£m)</th>
+          <th>Status</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          
+          <tr class="reveal-on-scroll">
+            <td><strong>Canada Life UK</strong></td>
+            <td>2024</td>
+            <td>
+              
+                
+                <span class="scr-value scr-high">162%</span>
+              
+            </td>
+            
+            <td class="coverage-trail">
+              
+              
+                
+                
+                <div class="ticks" title="SCR history 2024–2024" aria-label="SCR coverage history">
+                  
+                    <span class="tick latest" style="--tick-h: 100%" title="2024: 162%"></span>
+                  
+                </div>
+              
+            </td>
+            
+            <td>
+              
+                £3,446m
+              
+            </td>
+            <td><span class="badge badge-green">Processed</span></td>
+            <td><a class="detail-link" href="canadalife.html">View</a></td>
+          </tr>
+          
+          <tr class="reveal-on-scroll">
+            <td><strong>Legal &amp; General Group</strong></td>
+            <td>2024</td>
+            <td>
+              
+                
+                <span class="scr-value scr-high">220%</span>
+              
+            </td>
+            
+            <td class="coverage-trail">
+              
+              
+                
+                
+                <div class="ticks" title="SCR history 2024–2025" aria-label="SCR coverage history">
+                  
+                    <span class="tick" style="--tick-h: 100%" title="2024: 220%"></span>
+                  
+                    <span class="tick latest" style="--tick-h: 92%" title="2025: 203%"></span>
+                  
+                </div>
+              
+            </td>
+            
+            <td>
+              
+                £9,236m
+              
+            </td>
+            <td><span class="badge badge-green">Processed</span></td>
+            <td><a class="detail-link" href="legalandgeneral.html">View</a></td>
+          </tr>
+          
+          <tr class="reveal-on-scroll">
+            <td><strong>Standard Life plc</strong></td>
+            <td>2024</td>
+            <td>
+              
+                
+                <span class="scr-value scr-low">120%</span>
+              
+            </td>
+            
+            <td class="coverage-trail">
+              
+              
+                
+                
+                <div class="ticks" title="SCR history 2024–2024" aria-label="SCR coverage history">
+                  
+                    <span class="tick latest" style="--tick-h: 100%" title="2024: 120%"></span>
+                  
+                </div>
+              
+            </td>
+            
+            <td>
+              
+                £4m
+              
+            </td>
+            <td><span class="badge badge-green">Processed</span></td>
+            <td><a class="detail-link" href="phoenix.html">View</a></td>
+          </tr>
+          
+        
+      </tbody>
+    </table>
+  </div>
+  
+    
+  </section>
+  
+      
+    </div>
+  </details>
   
 
   <footer class="site-footer">
